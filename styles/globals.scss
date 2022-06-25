@@ -1,16 +1,183 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
+//? ################################## CSS RESET #####################################################
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'poppins', sans-serif;
+    }
+//? ################################## Variables #####################################################
+$color-bg: #1c1e29;
+$color-bg-variant: #282a36;
+$color-primary: #4aee88;
+$color-primary-variant: #2b824c;
+$color-white: #fff;
+$color-light: rgba(255, 255, 255, 0.6);
+//? ###################################### Home Page ######################################################
+.toaster{
+  font-size: 2rem;
 }
-
-* {
-  box-sizing: border-box;
+#home{
+  background-color: #1c1e29;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $color-white;
+  h6{
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    a{
+      color: $color-primary;
+      font-size: 1.5rem;
+      padding-left: .5rem;
+      transition: all .3s ease-in-out;
+      &:hover{
+        color: $color-primary-variant;
+      }
+    }
+  }
+  .container{
+    box-shadow: 0px 0px 20px 0px rgba(17, 17, 17, 0.492);
+    background-color: $color-bg-variant;
+    border-radius: 1rem;
+    padding: 4rem;
+    margin: 1rem;
+    h5{
+      font-size: 1.5rem;
+      padding-bottom: 1rem;
+      padding-top: 2rem;
+    }
+    input{
+      display: block;
+      width: 100%;
+      font-size: 1.3rem;
+      border: none;
+      outline: none;
+      margin-bottom: 1rem;
+      padding: .8rem;
+      font-weight: 700;
+      border-radius: .5rem;
+    }
+    button{
+      font-size: 1.5rem;
+      color: $color-bg;
+      font-weight: 700;
+      padding: 1rem 3rem;
+      border-radius: .5rem;
+      background-color: $color-primary;
+      border: none;
+      outline: none;
+      margin-top: .5rem;
+      margin-left: 22rem;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+      &:hover{
+        background-color: $color-primary-variant;
+      }
+    }
+    p{
+      font-size: 1.5rem;
+      padding-top: 1rem;
+      text-align: center;
+      a{
+        color: $color-primary;
+        font-size: 1.5rem;
+        text-decoration: none;
+        border-bottom: $color-primary 1px solid;
+        transition: all .3s ease-in-out;
+        &:hover{
+          color: $color-primary-variant;
+        border-bottom: $color-primary-variant 1px solid;
+        }
+      }
+    }
+  }
+}
+@media(max-width:424px){
+  html{
+    font-size: 50%;
+  }
+}
+//? ###################################### Room Page ######################################################
+#room{
+  background-color: $color-bg;
+  color: $color-white;
+  height: 100vh;
+  .container{
+    display: flex;
+    .left{
+      padding: 1rem 2rem;
+      .roomBox{
+        height: 78vh;
+        width: 15vw;
+        overflow-y: auto;
+        p{
+          font-size: 2rem;
+          padding-top: 2rem;
+        }
+        .avatar{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          font-weight: bold;
+          .sb-avatar--text{
+            margin: 1rem;
+            span{
+              font-size: 2rem;
+            }
+          }
+        h1{
+          font-size: 1.2rem;
+          text-align: center;
+          padding-bottom: 2rem;
+        }
+        }
+      }
+      .buttons{
+        button{
+          font-size: 1.5rem;
+          padding: .5rem 2rem;
+          display: block;
+          margin-top: 1rem;
+          border-radius: .5rem;
+          border: none;
+          outline: none;
+        }
+        .copy{
+          background-color: $color-primary;
+          transition: .3s all ease-in-out;
+          &:hover{
+            background-color: $color-primary-variant;
+          }
+        }
+        .leave{
+          &:hover{
+            background-color: $color-light;
+          }
+        }
+      }
+    }
+    .right{
+      background-color: #282a36;
+      width: 85vw;
+      .cm-gutterElement{
+        font-size: 2rem;
+      }
+      .cm-line{
+        font-size: 2rem;
+        span{
+          font-size: 2rem;
+        }
+      }
+    }
+  }
 }
